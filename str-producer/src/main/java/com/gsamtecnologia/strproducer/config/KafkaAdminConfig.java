@@ -27,7 +27,7 @@ public class KafkaAdminConfig {
     @Bean
     public KafkaAdmin.NewTopics topics(){
         return new KafkaAdmin.NewTopics(
-                TopicBuilder.name("str-topc")
+                TopicBuilder.name("str-topic")
                         .partitions(2)
                         .replicas(1)
                         .build()

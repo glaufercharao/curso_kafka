@@ -13,8 +13,9 @@ public class StringProducerService {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message){
-        kafkaTemplate.send("str-topic",message)
-                .addCallback(success -> log.info("Send message with success {}", message),
-                        error -> log.error(" Error send message"));
+        log.info("Send message {}", message);
+        kafkaTemplate.send("str-topic",message);
+//                .addCallback(success -> log.info("Send message with success {}", message),
+//                        error -> log.error(" Error send message"));
     }
 }
